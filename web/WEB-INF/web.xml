@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <display-name>Harry Potter's Online Store</display-name>
+    <servlet>
+        <servlet-name>AccountControllerServlet</servlet-name>
+        <servlet-class>com.harrypotter.web.jdbc.AccountControllerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductControllerServlet</servlet-name>
+        <servlet-class>com.harrypotter.web.jdbc.ProductControllerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HomeControllerServlet</servlet-name>
+        <servlet-class>com.harrypotter.web.jdbc.HomeControllerServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+        <async-supported>true</async-supported>
+    </servlet>
+    <servlet>
+        <servlet-name>PaymentControllerServlet</servlet-name>
+        <servlet-class>com.harrypotter.web.jdbc.PaymentControllerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ItemsCartControllerServlet</servlet-name>
+        <servlet-class>com.harrypotter.web.jdbc.ItemsCartControllerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OrderControllerServlet</servlet-name>
+        <servlet-class>com.harrypotter.web.jdbc.OrderControllerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReportServlet</servlet-name>
+        <servlet-class>com.harrypotter.web.jdbc.ReportServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AccountControllerServlet</servlet-name>
+        <url-pattern>/AccountControllerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductControllerServlet</servlet-name>
+        <url-pattern>/ProductControllerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HomeControllerServlet</servlet-name>
+        <url-pattern>/HomeControllerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaymentControllerServlet</servlet-name>
+        <url-pattern>/PaymentControllerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ItemsCartControllerServlet</servlet-name>
+        <url-pattern>/ItemsCartControllerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderControllerServlet</servlet-name>
+        <url-pattern>/OrderControllerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReportServlet</servlet-name>
+        <url-pattern>/ReportServlet</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>720</session-timeout>
+        <!-- 720 minutes = 12 hours -->
+        <cookie-config>
+            <max-age>43200</max-age>
+            <!-- 43200 seconds = 12 hours -->
+        </cookie-config>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>HomeControllerServlet</welcome-file>
+    </welcome-file-list>
+</web-app>
